@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import Head from "next/head";
 import Image from "next/image";
 import Typewriter, { TextCycle } from "../components/Typewrite";
@@ -14,17 +15,22 @@ const Home = () => {
 
       <main className={styles.main}>
         {/* <Image src="/website_profile_pic.jpg" alt="Photo of Spencer" height={255} width={200} /> */}
-        <h1 className={styles.title}>
-          <Typewriter
-            variation={TextCycle.ADDITION}
-            phrases={[
-              "Hey, I'm Spencer!",
-              "I'm a senior at Yale",
-              "I'm from Louisville",
-              "I'm passionate about the intersection of technology and the humanities",
-            ]}
-          />
-        </h1>
+        <div className={styles.typewriter}>
+          <h1 className={classNames(styles.title, styles["typewriter-title"])}>
+            <Typewriter
+              variation={TextCycle.ADDITION}
+              phrases={[
+                "Hey"
+                // "Hey, I'm Spencer!",
+                // "I'm a senior at Yale.",
+                // "I'm from Louisville.",
+                // "I'm passionate about",
+                // "technology,", "startups,", "history,", "and law.",
+              ]}
+              loop={["technology", "startups", "history", "law"]}
+            />
+          </h1>
+        </div>
       </main>
 
       <footer className={styles.footer}>
