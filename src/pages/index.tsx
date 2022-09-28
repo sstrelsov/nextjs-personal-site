@@ -1,8 +1,8 @@
-import classNames from "classnames";
-import Head from "next/head";
-import Image from "next/image";
-import Typewriter, { TextCycle } from "../components/Typewrite";
-import styles from "../styles/Home.module.scss";
+import classNames from 'classnames';
+import Head from 'next/head';
+import Image from 'next/image';
+import Typewriter from '../components/Typewrite';
+import styles from '../styles/Home.module.scss';
 
 const Home = () => {
   return (
@@ -16,18 +16,16 @@ const Home = () => {
       <main className={styles.main}>
         {/* <Image src="/website_profile_pic.jpg" alt="Photo of Spencer" height={255} width={200} /> */}
         <div className={styles.typewriter}>
-          <h1 className={classNames(styles.title, styles["typewriter-title"])}>
+          <h1 className={classNames(styles.title, styles['typewriter-title'])}>
             <Typewriter
-              variation={TextCycle.ADDITION}
-              phrases={[
-                "Hey"
-                // "Hey, I'm Spencer!",
-                // "I'm a senior at Yale.",
-                // "I'm from Louisville.",
-                // "I'm passionate about",
-                // "technology,", "startups,", "history,", "and law.",
+              addedPhrases={[
+                "Hey, I'm Spencer!",
+                "I'm a senior at Yale.",
+                "I'm from Louisville.",
+                "I'm passionate about"
               ]}
-              loop={["technology", "startups", "history", "law"]}
+              loopedPhrases={['technology', 'startups', 'history', 'law']}
+              loopNewLine={true}
             />
           </h1>
         </div>
@@ -35,7 +33,7 @@ const Home = () => {
 
       <footer className={styles.footer}>
         <p>
-          Copyright{" "}
+          Copyright{' '}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
